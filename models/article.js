@@ -1,38 +1,30 @@
 var mongoose = require("mongoose");
 
+// Save a refrence to the Schema constructor
 var Schema = mongoose.Schema;
 
+//Using the Schema constructor, create a new UserScheme object
 var ArticleSchema = new Schema({
 
   title: {
     type: String,
-    required: true,
-    unique: true
+    // required: true
   },
 
   link: {
     type: String,
-    required: true,
-    unique: true
+    // required: true
   },
 
   summary: {
     type: String,
-    required: false,
-    unique: false
-  },
-
-  byline: {
-    type: String,
-    required: false,
-    unique: false
+    required: false
   },
 
   isSaved: {
     type: Boolean,
     default: false,
-    required: false,
-    unique: false
+    required: false
   },
   // `note` is an object that stores a Note id
   // The ref property links the ObjectId to the Note model
